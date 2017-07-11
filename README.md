@@ -1,6 +1,11 @@
 # issue-tracker
 Issue tracker application
 
+# Running the application
+1. run `npm install`
+2. run `npm start`
+3. run `npm run server` in another terminal
+
 # Prerequisites
 The task described below is to be carried out using an HTML + CSS + JavaScript technology stack. The application can be implemented in any JavaScript framework, though Angular is preferable.NPM is the preferred build tool, all libraries and technologies that are available on http://npmjs.com are accepted. Incase NPM is not used, all external resources in the index.html must be referenced from a CDN (e.g.http://cdnjs.com).
 
