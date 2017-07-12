@@ -5,5 +5,8 @@
   </h1>
 </div>
 
-<issue></issue>
-
+<ul class="issues">
+  <li *ngFor="let issue of issues">
+    <issue [issue]="issue"></issue>
+  </li>
+</ul>
