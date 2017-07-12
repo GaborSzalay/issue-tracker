@@ -8,6 +8,7 @@ import { AppComponent } from './app-component/app.component';
 import { IssueListComponent } from './issue-list/issue-list.component';
 import { IssueComponent } from './issue/issue.component';
 import { AddIssueComponent } from './add-issue/add-issue.component';
+import { ErrorHandler } from './error-handler';
 
 const appRoutes: Routes = [
   {
@@ -20,7 +21,7 @@ const appRoutes: Routes = [
     AppComponent,
     IssueListComponent,
     IssueComponent,
-    AddIssueComponent
+    AddIssueComponent,
   ],
   imports: [
     RouterModule.forRoot(
@@ -32,7 +33,7 @@ const appRoutes: Routes = [
     JsonpModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ErrorHandler],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

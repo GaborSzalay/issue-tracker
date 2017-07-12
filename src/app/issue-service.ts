@@ -5,13 +5,13 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
 import { Issue } from './issue';
-import { ISSUES } from './mock-issues';
+import { ErrorHandler } from './error-handler';
 
 @Injectable()
 export class IssueService implements OnInit {
     private issueUrl = 'api/issues';
 
-    constructor(private http: Http) { }
+    constructor(private http: Http, private errorHandler: ErrorHandler) { }
 
     ngOnInit(): void {
         this.getIssues();
@@ -20,24 +20,11 @@ export class IssueService implements OnInit {
     getIssues(): Observable<Issue[]> {
         return this.http.get(this.issueUrl)
             .map(this.extractData)
-            .catch(this.handleError);
+            .catch(this.errorHandler.handleError);
     }
 
     private extractData(res: Response) {
         let body = res.json();
         return body || {};
-    }
-
-    private handleError(error: Response | any) {
-        let errMsg: string;
-        if (error instanceof Response) {
-            const body = error.json() || '';
-            const err = body.error || JSON.stringify(body);
-            errMsg = `${error.status} - ${error.statusText || ''} ${err}`;
-        } else {
-            errMsg = error.message ? error.message : error.toString();
-        }
-        console.error(errMsg);
-        return Observable.throw(errMsg);
     }
 }
