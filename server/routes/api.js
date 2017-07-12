@@ -1,5 +1,5 @@
-var router = require('express').Router();
-var issuesRouter = require('./api/issues');
+const router = require('express').Router();
+const issuesRouter = require('./api/issues');
 
 router.use('/issues', issuesRouter);
 

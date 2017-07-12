@@ -14,10 +14,10 @@ server.use(express.static(path.join(__dirname, '../dist')));
 
 server.use('/api', apiRoutes);
 
-server.get('/', function(req, res) {
+server.get('/', (req, res) => {
   res.render('index');
 });
 
-server.listen(port, function() {
+server.listen(port, () => {
   console.log('Listening on ' + port);
 });

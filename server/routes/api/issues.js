@@ -1,4 +1,4 @@
-var router = require('express').Router();
+const router = require('express').Router();
 
 const issues = [
     { id: 1, name: 'Test Name 1', description: 'Test description 1' },
@@ -7,7 +7,7 @@ const issues = [
     { id: 3, name: 'Test Name 4', description: 'Test description 4' }
 ];
 
-router.get('/', function (req, res) {
+router.get('/', (req, res) => {
     res.setHeader('Content-Type', 'application/json');
     res.send(JSON.stringify(issues));
 });
