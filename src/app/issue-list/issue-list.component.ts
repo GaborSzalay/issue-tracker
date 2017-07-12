@@ -11,8 +11,10 @@ import { IssueService } from '../issue-service';
 })
 export class IssueListComponent {
   issues: Issue[];
-
+  error: string;
+  
   constructor(private issueService: IssueService){
-    this.issues = issueService.getIssues();
+    
+    issueService.getIssues().subscribe( issues => {this.issues = issues}, error => this.error = <any>error );
   }
 }

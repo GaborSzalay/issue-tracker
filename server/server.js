@@ -1,10 +1,23 @@
 const express = require('express');
-const app = express();
+const path = require('path');
+const server = express();
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
+const port = process.env.PORT || 1337;
+const apiRoutes = require('./routes/api.js');
+
+
+server.set('views', path.join(__dirname, '../src'));
+server.engine('html', require('ejs').renderFile);
+server.set('view engine', 'html');
+
+server.use(express.static(path.join(__dirname, '../dist')));
+
+server.use('/api', apiRoutes);
+
+server.get('/', function(req, res) {
+  res.render('index');
 });
 
-app.listen(3000, () => {
-  console.log('Example app listening on port 3000!')
+server.listen(port, function() {
+  console.log('Listening on ' + port);
 });
