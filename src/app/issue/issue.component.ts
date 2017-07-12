@@ -8,4 +8,21 @@ import { Issue } from '../issue';
 })
 export class IssueComponent {
   @Input() issue: Issue;
+  editMode: boolean;
+
+  constructor() {
+    this.editMode = false;
+  }
+
+  editIssue(event) {
+    event.preventDefault();
+
+    this.editMode = true;
+  }
+
+  closeEditMode(event) {
+    event.preventDefault();
+
+    this.editMode = false;
+  }
 }

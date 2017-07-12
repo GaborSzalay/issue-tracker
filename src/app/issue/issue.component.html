@@ -1,9 +1,21 @@
-<div style="text-align:center">
-  <h1>
-    {{issue.name}}
-    {{issue.description}}
-  </h1>
+<div>
+  <div *ngIf="editMode">
+
+    <input [(ngModel)]="issue.name" placeholder="name">
+    <input [(ngModel)]="issue.description" placeholder="name">
+    <a href="#" (click)="closeEditMode($event)">Modify</a>
+
+  </div>
+
+  <div *ngIf="!editMode">
+
+    <div class="issue-name">
+      {{issue.name}}
+    </div>
+    <div class="issue-description">
+      {{issue.description}}
+    </div>
+    <a href="#" (click)="editIssue($event)">Edit</a>
+
+  </div>
 </div>
-
-
-
