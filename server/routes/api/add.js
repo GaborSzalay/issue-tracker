@@ -2,8 +2,8 @@ const router = require('express').Router();
 const issues = require('../../issues');
 
 router.get('/', (req, res) => {
-    res.setHeader('Content-Type', 'application/json');
-    res.send(JSON.stringify(issues));
+    issues.push({ id: issues[issues.length-1].id + 1, name: 'foo', description: 'bar' });
+    res.status(204).send();
 });
 
 module.exports = router;
