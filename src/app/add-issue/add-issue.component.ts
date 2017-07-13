@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Issue } from '../issue';
 import { IssueService } from '../issue-service';
 
@@ -9,16 +9,17 @@ import { IssueService } from '../issue-service';
   providers: [IssueService]
 })
 export class AddIssueComponent {
+  @Output() onIssueAdded = new EventEmitter<boolean>();
   issues: Issue[];
   newIssue: Issue;
   error: string;
 
   constructor(private issueService: IssueService){
-    issueService.getIssues().subscribe( issues => this.issues = issues, error => this.error = <any>error );
     this.newIssue = new Issue();
   }
 
   addIssue() {
-    this.issueService.create(this.newIssue.name, this.newIssue.description).subscribe( issue => this.issues.push(issue), error => this.error = <any>error );
+    this.issueService.create(this.newIssue.name, this.newIssue.description).subscribe( issue => {}, error => this.error = <any>error );
+    this.onIssueAdded.emit(true);
   }
 }

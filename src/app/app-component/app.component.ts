@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  reloadIssues = 0;
 
+  onIssueAdded() {
+    this.reloadIssues++;
+  }
 }

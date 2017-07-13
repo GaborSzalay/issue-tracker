@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnChanges } from '@angular/core';
 import { Issue } from '../issue';
 import { IssueService } from '../issue-service';
 
@@ -10,11 +10,19 @@ import { IssueService } from '../issue-service';
   providers: [IssueService]
 })
 export class IssueListComponent {
+  @Input() reloadIssues: number
   issues: Issue[];
   error: string;
   
   constructor(private issueService: IssueService){
-    
-    issueService.getIssues().subscribe( issues => {this.issues = issues}, error => this.error = <any>error );
+    this.fetchIssues();
+  }
+
+  ngOnChanges(reloadIssues) {
+    this.fetchIssues();
+  }
+
+  private fetchIssues() {
+    this.issueService.getIssues().subscribe( issues => {this.issues = issues}, error => this.error = <any>error );
   }
 }

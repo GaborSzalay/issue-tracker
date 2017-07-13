@@ -5,6 +5,6 @@
 
 <router-outlet></router-outlet>
 
-<add-issue></add-issue>
+<add-issue (onIssueAdded)="onIssueAdded()"></add-issue>
 
-<issue-list></issue-list>
+<issue-list [reloadIssues]="reloadIssues"></issue-list>
