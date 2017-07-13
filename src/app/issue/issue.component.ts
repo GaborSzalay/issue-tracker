@@ -11,6 +11,7 @@ import { IssueService } from '../issue-service';
 export class IssueComponent {
   @Input() issue: Issue;
   editMode: boolean;
+  error: string;
 
   constructor(private issueService: IssueService) {
     this.editMode = false;
@@ -18,14 +19,14 @@ export class IssueComponent {
 
   editIssue(event) {
     event.preventDefault();
-    
+
     this.editMode = true;
   }
 
   modify(event) {
     event.preventDefault();
 
-    this.issueService.edit(this.issue);
+    this.issueService.edit(this.issue).subscribe( () => {}, error => this.error = <any>error );
     this.editMode = false;
   }
 }
