@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   reloadIssues = 0;
 
-  onIssueAdded() {
-    this.reloadIssues++;
+  onIssueAdded(addedIssueId) {
+    this.reloadIssues = addedIssueId;
   }
 }

@@ -9,7 +9,7 @@ import { IssueService } from '../issue-service';
   providers: [IssueService]
 })
 export class AddIssueComponent {
-  @Output() onIssueAdded = new EventEmitter<Issue>();
+  @Output() onIssueAdded = new EventEmitter<number>();
   issues: Issue[];
   newIssue: Issue;
   error: string;
@@ -20,7 +20,7 @@ export class AddIssueComponent {
 
   addIssue() {
     this.issueService.create(this.newIssue.name, this.newIssue.description).subscribe( issue => {
-      this.onIssueAdded.emit(issue);
+      this.onIssueAdded.emit(issue.id);
     }, error => this.error = <any>error );
   }
 }
