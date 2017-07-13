@@ -14,9 +14,7 @@ export class IssueListComponent {
   issues: Issue[];
   error: string;
   
-  constructor(private issueService: IssueService){
-    this.fetchIssues();
-  }
+  constructor(private issueService: IssueService){}
 
   ngOnChanges(reloadIssues) {
     this.fetchIssues();
