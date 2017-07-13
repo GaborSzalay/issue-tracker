@@ -1,5 +1,5 @@
 import { Injectable, OnInit } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
@@ -9,7 +9,8 @@ import { ErrorHandler } from './error-handler';
 
 @Injectable()
 export class IssueService implements OnInit {
-    private issueUrl = 'api/issues';
+    private issuesFetchUrl = 'api/issues';
+    private issueAddUrl = 'api/add';
 
     constructor(private http: Http, private errorHandler: ErrorHandler) { }
 
@@ -18,13 +19,22 @@ export class IssueService implements OnInit {
     }
 
     getIssues(): Observable<Issue[]> {
-        return this.http.get(this.issueUrl)
+        return this.http.get(this.issuesFetchUrl)
+            .map(this.extractData)
+            .catch(this.errorHandler.handleError);
+    }
+
+    create(name: string, description: string): Observable<Issue> {
+        const headers = new Headers({ 'Content-Type': 'application/json' });
+        const options = new RequestOptions({ headers: headers });
+
+        return this.http.post(this.issueAddUrl, { name, description }, options)
             .map(this.extractData)
             .catch(this.errorHandler.handleError);
     }
 
     private extractData(res: Response) {
-        let body = res.json();
+        const body = res.json();
         return body || {};
     }
 }

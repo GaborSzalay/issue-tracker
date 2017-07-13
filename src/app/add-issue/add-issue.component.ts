@@ -19,6 +19,6 @@ export class AddIssueComponent {
   }
 
   addIssue() {
-    this.issues.push({ id: 1, name: this.newIssue.name, description: this.newIssue.description });
+    this.issueService.create(this.newIssue.name, this.newIssue.description).subscribe( issue => this.issues.push(issue), error => this.error = <any>error );
   }
 }
