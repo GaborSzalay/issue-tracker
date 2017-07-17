@@ -22,7 +22,7 @@
     
     <div *ngIf="issue.child && child">
       <div class="child-issue">
-        <issue [issue]="child"></issue>
+        <issue [issue]="child" (issueOutput)="onIssue($event)"></issue>
       </div>
     </div>
 

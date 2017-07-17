@@ -42,4 +42,8 @@ export class IssueComponent implements OnInit {
   onIssueAdded(addedIssueId) {
     this.issueOutput.emit(new IssueOutput(addedIssueId));
   }
+
+  onIssue(issueOutput: IssueOutput) {
+    this.issueOutput.emit(issueOutput);
+  }
 }
