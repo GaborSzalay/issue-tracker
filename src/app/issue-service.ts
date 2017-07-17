@@ -35,11 +35,16 @@ export class IssueService implements OnInit {
     .catch(this.errorHandler.handleError);
   }
   
-  create(name: string, description: string): Observable<Issue> {
+  create(name: string, description: string, parent: number): Observable<Issue> {
     const headers = new Headers({ 'Content-Type': 'application/json' });
     const options = new RequestOptions({ headers: headers });
-    
-    return this.http.post(this.issueAddUrl, { name, description }, options)
+    const data = {
+      name: name,
+      description: description,
+      parent: parent || undefined
+    };
+
+    return this.http.post(this.issueAddUrl, data, options)
     .map(this.extractData)
     .catch(this.errorHandler.handleError);
   }

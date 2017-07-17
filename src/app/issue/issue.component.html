@@ -3,7 +3,7 @@
 
     <input [(ngModel)]="issue.name" placeholder="name">
     <input [(ngModel)]="issue.description" placeholder="name">
-    <add-issue [parent]="issue.id"></add-issue>
+    <add-issue [parentIssue]="issue.id"></add-issue>
     <a href="#" (click)="modify($event)">Modify</a>
 
   </div>

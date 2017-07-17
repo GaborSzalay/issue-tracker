@@ -20,9 +20,7 @@ export class IssueComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.issue.child) {
-      this.issueService.getIssue(this.issue.child).subscribe( child  => {
-          this.child = child;
-      }, error => this.error = <any>error);
+      this.issueService.getIssue(this.issue.child).subscribe( child  => { this.child = child; }, error => this.error = <any>error);
     }
   }
 

@@ -1,8 +1,7 @@
   <form (ngSubmit)="addIssue()" #issueForm="ngForm">
     <input [(ngModel)]="newIssue.name" name="name" placeholder="Name" #name="ngModel">
     <input [(ngModel)]="newIssue.description" name="description" placeholder="Description" #description="ngModel">
-    <input [(ngModel)]="newIssue.parent" name="parent" #parent="ngModel" type="hidden" value="{{parent}}">
-
+    
     <button>Add issue</button>
   </form>
 
