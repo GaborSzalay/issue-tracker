@@ -1,5 +1,6 @@
 import { Component, Input, OnChanges } from '@angular/core';
 import { Issue } from '../issue';
+import { IssueOutput } from '../issue-output';
 import { IssueService } from '../issue-service';
 
 
@@ -17,6 +18,10 @@ export class IssueListComponent {
   constructor(private issueService: IssueService){}
 
   ngOnChanges(reloadIssues) {
+    this.fetchIssues();
+  }
+
+  onIssue(issueOutput: IssueOutput) {
     this.fetchIssues();
   }
 

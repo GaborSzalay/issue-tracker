@@ -3,10 +3,10 @@ const issues = require('../../issues');
 
 router.post('/', (req, res) => {
     const newIssue = {
-        id: issues[issues.length-1].id + 1,
+        id: issues.length + 1,
         name: req.body.name,
         description: req.body.description,
-        parent: req.body.parent || undefined
+        parent: req.body.parent
     };
     const [ parentIssue ] = issues.filter( currentIssue => { return currentIssue.id === req.body.parent });
     if (parentIssue) {

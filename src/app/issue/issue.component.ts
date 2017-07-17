@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 import { Issue } from '../issue';
+import { IssueOutput } from '../issue-output';
 import { IssueService } from '../issue-service';
 
 @Component({
@@ -10,6 +11,7 @@ import { IssueService } from '../issue-service';
 })
 export class IssueComponent implements OnInit {
   @Input() issue: Issue;
+  @Output() issueOutput = new EventEmitter<IssueOutput>();
   child: Issue;
   editMode: boolean;
   error: string;
@@ -35,5 +37,9 @@ export class IssueComponent implements OnInit {
 
     this.issueService.edit(this.issue).subscribe(() => { }, error => this.error = <any>error);
     this.editMode = false;
+  }
+
+  onIssueAdded(addedIssueId) {
+    this.issueOutput.emit(new IssueOutput(addedIssueId));
   }
 }

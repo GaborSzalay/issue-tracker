@@ -41,7 +41,7 @@ export class IssueService implements OnInit {
     const data = {
       name: name,
       description: description,
-      parent: parent || undefined
+      parent: parent
     };
 
     return this.http.post(this.issueAddUrl, data, options)

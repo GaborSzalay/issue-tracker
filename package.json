@@ -4,6 +4,7 @@
   "license": "MIT",
   "scripts": {
     "start": "node server/server.js",
+    "start-debug": "node --inspect --debug-brk server/server.js",
     "ng": "node ./node_modules/@angular/cli/bin/ng",
     "serve": "node ./node_modules/@angular/cli/bin/ng serve",
     "build": "node ./node_modules/@angular/cli/bin/ng build",
