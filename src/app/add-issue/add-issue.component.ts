@@ -24,4 +24,8 @@ export class AddIssueComponent {
       this.addIssueOutput.emit(issue.id);
     }, error => this.error = <any>error );
   }
+
+  hasParent() {
+    return Number.isInteger(this.parentIssue);
+  }
 }

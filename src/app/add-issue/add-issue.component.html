@@ -1,9 +1,9 @@
-  <form (ngSubmit)="addIssue()" #issueForm="ngForm">
-    <input type="text" [(ngModel)]="newIssue.name" name="name" placeholder="Name" #name="ngModel">
-    <input type="text" [(ngModel)]="newIssue.description" name="description" placeholder="Description" #description="ngModel">
-    
-    <button>Add issue</button>
-  </form>
-
-
-
+<form (ngSubmit)="addIssue()" #issueForm="ngForm">
+  <span *ngIf="hasParent()">
+    Add sub-issue
+  </span>
+  <input type="text" [(ngModel)]="newIssue.name" name="name" placeholder="Name" #name="ngModel">
+  <input type="text" [(ngModel)]="newIssue.description" name="description" placeholder="Description" #description="ngModel">
+  
+  <button>Add issue</button>
+</form>
