@@ -12,10 +12,18 @@
     <div class="issue-name">
       {{issue.name}}
     </div>
+
     <div class="issue-description">
       {{issue.description}}
     </div>
-    <a href="#" (click)="editIssue($event)">Edit</a>
+
+    <a href="#" (click)="editIssue($event)">Edit {{issue.id}}</a>
+
+    <div *ngIf="issue.childIssue">
+      <div class="child-issue">
+        <issue [issue]="issueService.getIssue(issue.childIssue)"></issue>
+      </div>
+    </div>
 
   </div>
 </div>

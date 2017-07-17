@@ -10,6 +10,7 @@ import { ErrorHandler } from './error-handler';
 @Injectable()
 export class IssueService implements OnInit {
     private issuesFetchUrl = 'api/issues';
+    private issueFetchUrl = 'api/issue';
     private issueAddUrl = 'api/add';
     private issueEditUrl = 'api/edit';
 
@@ -24,6 +25,15 @@ export class IssueService implements OnInit {
             .map(this.extractData)
             .catch(this.errorHandler.handleError);
     }
+
+    getIssue(id: number): Observable<Issue> {
+        const headers = new Headers({ 'Content-Type': 'application/json' });
+        const options = new RequestOptions({ headers: headers });
+
+        return this.http.post(this.issueFetchUrl, { id }, options)
+            .map(this.extractData)
+            .catch(this.errorHandler.handleError);
+    }    
 
     create(name: string, description: string): Observable<Issue> {
         const headers = new Headers({ 'Content-Type': 'application/json' });
