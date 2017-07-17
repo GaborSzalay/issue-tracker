@@ -1,8 +1,8 @@
-<div>
+<div class="issue">
   <div *ngIf="editMode">
 
-    <input [(ngModel)]="issue.name" placeholder="name">
-    <input [(ngModel)]="issue.description" placeholder="name">
+    <input type="text" [(ngModel)]="issue.name" placeholder="name">
+    <input type="text" [(ngModel)]="issue.description" placeholder="name">
     <add-issue [parentIssue]="issue.id" (addIssueOutput)="onIssueAdded($event)"></add-issue>
     <a href="#" (click)="modify($event)">Modify</a>
 
@@ -10,15 +10,15 @@
 
   <div *ngIf="!editMode">
 
-    <div class="issue-name">
+    <span class="issue-name">
       {{issue.name}}
-    </div>
+    </span>
 
-    <div class="issue-description">
+    <span class="issue-description">
       {{issue.description}}
-    </div>
+    </span>
 
-    <a href="#" (click)="editIssue($event)">Edit</a>
+    <a href="#" class="edit" (click)="editIssue($event)">Edit</a>
     
     <div *ngIf="issue.child && child">
       <div class="child-issue">

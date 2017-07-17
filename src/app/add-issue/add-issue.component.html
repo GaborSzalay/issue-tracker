@@ -1,6 +1,6 @@
   <form (ngSubmit)="addIssue()" #issueForm="ngForm">
-    <input [(ngModel)]="newIssue.name" name="name" placeholder="Name" #name="ngModel">
-    <input [(ngModel)]="newIssue.description" name="description" placeholder="Description" #description="ngModel">
+    <input type="text" [(ngModel)]="newIssue.name" name="name" placeholder="Name" #name="ngModel">
+    <input type="text" [(ngModel)]="newIssue.description" name="description" placeholder="Description" #description="ngModel">
     
     <button>Add issue</button>
   </form>
