@@ -21,6 +21,6 @@ export class IssueListComponent {
   }
 
   private fetchIssues() {
-    this.issueService.getIssues().subscribe( issues => {this.issues = issues}, error => this.error = <any>error );
+    this.issueService.getMainIssues().subscribe( issues => {this.issues = issues}, error => this.error = <any>error );
   }
 }

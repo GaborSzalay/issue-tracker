@@ -2,7 +2,8 @@ export class Issue {
     id: number;
     name: string;
     description: string;
-    childIssue: number;
+    child: number;
+    parent: number;
 
     constructor() {};
 }

@@ -17,11 +17,11 @@
       {{issue.description}}
     </div>
 
-    <a href="#" (click)="editIssue($event)">Edit {{issue.id}}</a>
+    <a href="#" (click)="editIssue($event)">Edit</a>
 
     <div *ngIf="issue.child">
       <div class="child-issue">
-        {{issue.child}}
+        <issue [issue]="child"></issue>
       </div>
     </div>
 
