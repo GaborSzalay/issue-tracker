@@ -1,10 +1,4 @@
-<nav>
-  <a routerLink="/" routerLinkActive="active">List</a>
-  <a routerLink="/add" routerLinkActive="active">Add Issue</a>
-</nav>
-
-<router-outlet></router-outlet>
-
+<h1>Add issue</h1>
 <add-issue (onIssueAdded)="onIssueAdded($event)"></add-issue>
 
 <issue-list [reloadIssues]="reloadIssues"></issue-list>
