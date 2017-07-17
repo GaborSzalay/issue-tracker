@@ -19,9 +19,9 @@
 
     <a href="#" (click)="editIssue($event)">Edit {{issue.id}}</a>
 
-    <div *ngIf="issue.childIssue">
+    <div *ngIf="issue.child">
       <div class="child-issue">
-        <issue [issue]="issueService.getIssue(issue.childIssue)"></issue>
+        {{issue.child}}
       </div>
     </div>
 

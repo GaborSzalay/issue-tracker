@@ -17,10 +17,10 @@ export class IssueService implements OnInit {
     constructor(private http: Http, private errorHandler: ErrorHandler) { }
 
     ngOnInit(): void {
-        this.getIssues();
+        this.getMainIssues();
     }
 
-    getIssues(): Observable<Issue[]> {
+    getMainIssues(): Observable<Issue[]> {
         return this.http.get(this.issuesFetchUrl)
             .map(this.extractData)
             .catch(this.errorHandler.handleError);
