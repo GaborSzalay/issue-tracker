@@ -1,9 +1,13 @@
 .issue {
     font-weight: bold;
     background-color: #ffcc99;
-    padding: 4px 20px;
+    padding-top: 5px;
+    padding-bottom: 0px;
+    padding-left: 16px;
+    padding-right: 0px;
     margin-bottom: 18px;
-    box-shadow: 11px 15px 37px #888888;
+    margin-top: 3px;
+    box-shadow: 0px -0px 14px #888888;
     border-radius: 10px 10px 10px 10px;
     -moz-border-radius: 10px 10px 10px 10px;
     -webkit-border-radius: 10px 10px 10px 10px;

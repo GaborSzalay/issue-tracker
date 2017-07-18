@@ -1,5 +1,5 @@
 <form (ngSubmit)="addIssue()" #issueForm="ngForm">
-  <span *ngIf="hasParent()">
+  <span class="sub-issue" *ngIf="hasParent()">
     Add sub-issue
   </span>
   <input type="text" [(ngModel)]="newIssue.name" name="name" placeholder="Name" #name="ngModel">
