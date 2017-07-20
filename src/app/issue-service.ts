@@ -29,7 +29,7 @@ export class IssueService implements OnInit {
   getIssue(id: number): Observable<Issue> {
     const headers = new Headers({ 'Content-Type': 'application/json' });
     const options = new RequestOptions({ headers: headers });
-    
+
     return this.http.post(this.issueFetchUrl, { id }, options)
     .map(this.extractData)
     .catch(this.errorHandler.handleError);
@@ -52,7 +52,7 @@ export class IssueService implements OnInit {
   edit(issue: Issue): Observable<Issue> {
     const headers = new Headers({ 'Content-Type': 'application/json' });
     const options = new RequestOptions({ headers: headers });
-    
+
     return this.http.post(this.issueEditUrl, { id: issue.id, name: issue.name, description: issue.description }, options)
     .map(this.extractData)
     .catch(this.errorHandler.handleError);

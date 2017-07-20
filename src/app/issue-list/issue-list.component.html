@@ -1,5 +1,5 @@
 <ul class="issues">
   <li *ngFor="let issue of issues">
-    <issue [issue]="issue" (issueOutput)="onIssue($event)"></issue>
+    <app-issue [issue]="issue" (issueOutput)="onIssue($event)"></app-issue>
   </li>
 </ul>

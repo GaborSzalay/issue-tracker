@@ -3,7 +3,7 @@ import { Issue } from '../issue';
 import { IssueService } from '../issue-service';
 
 @Component({
-  selector: 'add-issue',
+  selector: 'app-add-issue',
   templateUrl: './add-issue.component.html',
   styleUrls: ['./add-issue.component.css'],
   providers: [IssueService]

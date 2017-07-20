@@ -1,6 +1,6 @@
 <div class="app">
     <h1>Issue tracker</h1>
-    <add-issue (addIssueOutput)="onIssueAdded($event)"></add-issue>
+    <app-add-issue (addIssueOutput)="onIssueAdded($event)"></app-add-issue>
 
-    <issue-list [reloadIssues]="reloadIssues"></issue-list>
+    <app-issue-list [reloadIssues]="reloadIssues"></app-issue-list>
 </div>

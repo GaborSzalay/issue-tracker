@@ -3,7 +3,7 @@
 
     <input type="text" [(ngModel)]="issue.name" placeholder="name">
     <input type="text" [(ngModel)]="issue.description" placeholder="name">
-    <add-issue [parentIssue]="issue.id" (addIssueOutput)="onIssueAdded($event)"></add-issue>
+    <app-add-issue [parentIssue]="issue.id" (addIssueOutput)="onIssueAdded($event)"></app-add-issue>
     <a href="#" (click)="modify($event)">Modify</a>
 
   </div>
@@ -22,7 +22,7 @@
     
     <div *ngIf="issue.child && child">
       <div class="child-issue">
-        <issue [issue]="child" (issueOutput)="onIssue($event)"></issue>
+        <app-issue [issue]="child" (issueOutput)="onIssue($event)"></app-issue>
       </div>
     </div>
 

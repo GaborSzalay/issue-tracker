@@ -5,7 +5,7 @@ import { IssueService } from '../issue-service';
 
 
 @Component({
-  selector: 'issue-list',
+  selector: 'app-issue-list',
   templateUrl: './issue-list.component.html',
   styleUrls: ['./issue-list.component.css'],
   providers: [IssueService]

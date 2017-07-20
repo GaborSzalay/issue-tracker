@@ -4,7 +4,7 @@ import { IssueOutput } from '../issue-output';
 import { IssueService } from '../issue-service';
 
 @Component({
-  selector: 'issue',
+  selector: 'app-issue',
   templateUrl: './issue.component.html',
   styleUrls: ['./issue.component.css'],
   providers: [IssueService]
