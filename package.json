@@ -2,6 +2,9 @@
   "name": "issue-tracker",
   "version": "0.1.0",
   "license": "MIT",
+  "description": "Example issue tracker application using Angular",
+  "author": "Gabor Szalay <yaastreet@gmail.com> (https://github.com/GaborSzalay)",
+  "homepage": "https://github.com/GaborSzalay/issue-tracker",
   "scripts": {
     "start": "node server/server.js",
     "start-debug": "node --inspect --debug-brk server/server.js",
@@ -11,9 +14,9 @@
     "build-watch": "node ./node_modules/@angular/cli/bin/ng build -w",
     "test": "node ./node_modules/@angular/cli/bin/ng test",
     "lint": "node ./node_modules/@angular/cli/bin/ng lint",
-    "e2e": "node ./node_modules/@angular/cli/bin/ng e2e"
+    "e2e": "node ./node_modules/@angular/cli/bin/ng e2e",
+    "prepush": "yarn run lint && yarn run test"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "^4.0.0",
     "@angular/common": "^4.0.0",
