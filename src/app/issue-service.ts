@@ -13,19 +13,19 @@ export class IssueService implements OnInit {
   private issueFetchUrl = 'api/issue';
   private issueAddUrl = 'api/add';
   private issueEditUrl = 'api/edit';
-  
+
   constructor(private http: Http, private errorHandler: ErrorHandler) { }
-  
+
   ngOnInit(): void {
     this.getMainIssues();
   }
-  
+
   getMainIssues(): Observable<Issue[]> {
     return this.http.get(this.issuesFetchUrl)
     .map(this.extractData)
     .catch(this.errorHandler.handleError);
   }
-  
+
   getIssue(id: number): Observable<Issue> {
     const headers = new Headers({ 'Content-Type': 'application/json' });
     const options = new RequestOptions({ headers: headers });
@@ -34,7 +34,7 @@ export class IssueService implements OnInit {
     .map(this.extractData)
     .catch(this.errorHandler.handleError);
   }
-  
+
   create(name: string, description: string, parent: number): Observable<Issue> {
     const headers = new Headers({ 'Content-Type': 'application/json' });
     const options = new RequestOptions({ headers: headers });
@@ -48,7 +48,7 @@ export class IssueService implements OnInit {
     .map(this.extractData)
     .catch(this.errorHandler.handleError);
   }
-  
+
   edit(issue: Issue): Observable<Issue> {
     const headers = new Headers({ 'Content-Type': 'application/json' });
     const options = new RequestOptions({ headers: headers });
@@ -57,7 +57,7 @@ export class IssueService implements OnInit {
     .map(this.extractData)
     .catch(this.errorHandler.handleError);
   }
-  
+
   private extractData(res: Response) {
     const body = res.json();
     return body || {};

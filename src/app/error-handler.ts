@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class ErrorHandler {
-  
+
   handleError(error: Response | any) {
     let errorMessage: string;
     if (error instanceof Response) {

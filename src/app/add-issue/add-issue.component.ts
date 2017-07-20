@@ -15,7 +15,7 @@ export class AddIssueComponent {
   newIssue: Issue;
   error: string;
 
-  constructor(private issueService: IssueService){
+  constructor(private issueService: IssueService) {
     this.newIssue = new Issue();
   }
 

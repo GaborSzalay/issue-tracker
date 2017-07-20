@@ -10,12 +10,12 @@ import { IssueService } from '../issue-service';
   styleUrls: ['./issue-list.component.css'],
   providers: [IssueService]
 })
-export class IssueListComponent {
+export class IssueListComponent implements OnChanges {
   @Input() reloadIssues: number
   issues: Issue[];
   error: string;
-  
-  constructor(private issueService: IssueService){}
+
+  constructor(private issueService: IssueService) {}
 
   ngOnChanges(reloadIssues) {
     this.fetchIssues();
