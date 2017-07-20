@@ -1,5 +1,5 @@
 # issue-tracker
-Issue tracker application
+Issue tracker application [![Circle CI](https://circleci.com/gh/GaborSzalay/issue-tracker.svg?style=svg)](https://circleci.com/gh/GaborSzalay/issue-tracker)
 
 # Running the application
 1. run `npm install`
