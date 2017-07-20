@@ -5,19 +5,12 @@ Issue tracker application
 1. run `npm install`
 3. run `npm run build`
 3. run `npm start`
+4. load `http://localhost:1337/`
 
-# Prerequisites
-The task described below is to be carried out using an HTML + CSS + JavaScript technology stack. The application can be implemented in any JavaScript framework, though Angular is preferable.NPM is the preferred build tool, all libraries and technologies that are available on http://npmjs.com are accepted. Incase NPM is not used, all external resources in the index.html must be referenced from a CDN (e.g.http://cdnjs.com).
+Written in Angular 4 and TypeScript 2 in order to demonstrate a CRUD model between client and REST-like server.
+Still in progress, see [issues](https://github.com/GaborSzalay/issue-tracker/issues) for the upcoming features and bugs.
 
-# The Assignment
-
-Implement an issue tracking web application that meets the following criteria:
-
-1. New issues can be created, existing ones can be edited
-2. Issues can be multi-level, meaning a topmost issue can have sub-issues
-3. Any status changes of an issue are broadcasted to all connected clients in real-time
-4. The application has a flat/minimal user interface
-
-# Implementation Guidelines
-The application should be asynchronous when it comes to communicating with the backend server. No persistence is needed, but all data should be kept in-memory in a consistent manner.
-When NodeJS project structure is used, setup start/build/test scripts. Provide a minimal, runnable NodeJS or JVM based http server.
+1. It can create issues that is stored on NodeJS backend side.
+2. Issues can be edited
+3. Sub-issues can be created under a main issue.
+4. Sub-issues can be created under another sub-issue.
